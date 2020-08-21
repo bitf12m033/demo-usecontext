@@ -3,9 +3,10 @@ import ValueContext from './ValueContext';
 
 function Child() {
     let value = useContext(ValueContext);
+    let updateValue = value[1];
     return <div>
-        Child Div 
-<span>Number: <b>{value}</b></span>
+        Child number {value[0]}
+      <button onClick={()=> { updateValue(++value[0]) }}>Update value</button>
     </div>
 }
 
